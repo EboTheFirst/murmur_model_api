@@ -7,6 +7,7 @@ from fastapi import FastAPI, UploadFile
 app = FastAPI()
 
 
+
 @app.post("/ml/")
 def make_prediction(audio: UploadFile):
     dir = f"./audios/aud{random.randrange(start=0, stop=10)}.wav"
