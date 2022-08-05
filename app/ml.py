@@ -70,6 +70,7 @@ def predict(file):
     
     output = {}
     output['prediction'] = bool(predictions[0])
+    output['audio_sample_rate'] = sr
 
     predictions = [OUTCOMES[p] for p in predictions]
     output['alt_prediction'] = predictions[0]
