@@ -75,6 +75,6 @@ def predict(file):
     predictions = [OUTCOMES[p] for p in predictions]
     output['alt_prediction'] = predictions[0]
     output['certainty'] = float(certainty[0])
-    # output['audio_array'] = audio.tolist()
+    output['audio_array'] = audio.tolist()
 
     return output
