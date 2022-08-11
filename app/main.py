@@ -2,11 +2,19 @@ import random
 import shutil
 from app.ml import predict
 from fastapi import FastAPI, UploadFile
-
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+origins = ["*"]
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post("/ml/")
 def make_prediction(audio: UploadFile):
